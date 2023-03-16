@@ -33,8 +33,8 @@ while prompt != "0":
     total = 0
 
     total = calculate(i, total)
-    print(f"Total: £{total}")
+    print(f"\nthis week i spent £{total}\n")
 
     prompt = input("Press enter to enter another list, 0 to quit: ")
 
-print("\nGoodbye!\n")
+print("\nGoodbye!")
