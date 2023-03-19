@@ -24,8 +24,9 @@ def calculate(i, total):
 
 
 print("\n------------------------------------\n")
-print("Welcome to easyAdd1.2")
-print("Enter a list of number to add together or simply paste a list of numbers!")
+print(" Welcome to easyAdd1.2")
+print(" Enter a list of numbers to add together")
+print(" Or simply paste a list of numbers!")
 print("\n------------------------------------\n")
 
 while prompt != "0":
@@ -33,7 +34,7 @@ while prompt != "0":
     total = 0
 
     total = calculate(i, total)
-    print(f"\nthis week i spent £{total}\n")
+    print(f"\nthis week i spent £{format(total, '.2f')}\n")
 
     prompt = input("Press enter to enter another list, 0 to quit: ")
 
