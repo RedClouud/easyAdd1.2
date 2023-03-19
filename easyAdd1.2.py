@@ -17,6 +17,7 @@ def calculate(i, total):
                 break
             except ValueError:
                 print("Please enter a valid number")
+                num = input(f"Enter item {i}: ")
                 continue
 
         total += round(num, 2)
@@ -34,7 +35,7 @@ while prompt != "0":
     total = 0
 
     total = calculate(i, total)
-    print(f"\nthis week i spent £{format(total, '.2f')}\n")
+    print(f"\nthis week i spent £{format(round(total, 2), '.2f')}\n")
 
     prompt = input("Press enter to enter another list, 0 to quit: ")
 
