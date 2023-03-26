@@ -1,12 +1,19 @@
-# easyAdd1.2
+# easyAdd1.2: a lightweight calculator
 
-prompt = ""
+# TODO
+# - export to expenses google sheet
+
+LINE_CLEAR = '\x1b[2K'
+LINE_UP = '\033[1A'
 
 
 def calculate(i, total):
 
     while True:
-        num = input(f"Enter item {i}: ")
+
+        print(f"    Total: £{format(round(total, 2), '.2f')}", end='\r')
+        print(LINE_UP, end=LINE_CLEAR)
+        num = input("    ")
 
         if num == "":
             return total
@@ -16,10 +23,11 @@ def calculate(i, total):
                 num = float(num)
                 break
             except ValueError:
-                print("Please enter a valid number")
-                num = input(f"Enter item {i}: ")
+                print(LINE_UP, end=LINE_CLEAR)
+                num = input("    ")
                 continue
 
+        print("")
         total += round(num, 2)
         i += 1
 
@@ -30,13 +38,30 @@ print(" Enter a list of numbers to add together")
 print(" Or simply paste a list of numbers!")
 print("\n------------------------------------\n")
 
-while prompt != "0":
-    i = 1
-    total = 0
 
-    total = calculate(i, total)
-    print(f"\nthis week i spent £{format(round(total, 2), '.2f')}\n")
+while True:
 
-    prompt = input("Press enter to enter another list, 0 to quit: ")
+    print("""
+    ------------------------------------
+    enter - enter another list
+    0 - quit: 
+    ------------------------------------
+    """)
 
-print("\nGoodbye!")
+    prompt = input("Prompt: ")
+
+    if prompt == "":
+        i = 1
+        total = 0
+
+        total = calculate(i, total)
+        print(LINE_UP, end=LINE_CLEAR)
+        print("")
+        print(f"    this week i spent £{format(round(total, 2), '.2f')}")
+
+    elif prompt == "0":
+        print("\nGoodbye!")
+        exit(0)
+
+    else:
+        print("Please enter a valid option")
