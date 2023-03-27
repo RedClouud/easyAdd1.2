@@ -7,7 +7,7 @@ LINE_CLEAR = '\x1b[2K'
 LINE_UP = '\033[1A'
 
 
-def calculate(i, total):
+def calculate(total):
 
     while True:
 
@@ -29,7 +29,6 @@ def calculate(i, total):
 
         print("")
         total += round(num, 2)
-        i += 1
 
 
 print("\n------------------------------------\n")
@@ -51,10 +50,9 @@ while True:
     prompt = input("Prompt: ")
 
     if prompt == "":
-        i = 1
         total = 0
 
-        total = calculate(i, total)
+        total = calculate(total)
         print(LINE_UP, end=LINE_CLEAR)
         print("")
         print(f"    this week i spent £{format(round(total, 2), '.2f')}")
