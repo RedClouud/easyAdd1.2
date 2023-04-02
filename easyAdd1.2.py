@@ -31,35 +31,30 @@ def calculate(total):
         total += round(num, 2)
 
 
+print("")
 print("\n------------------------------------\n")
 print(" Welcome to easyAdd1.2")
 print(" Enter a list of numbers to add together")
 print(" Or simply paste a list of numbers!")
 print("\n------------------------------------\n")
+print("")
 
 
 while True:
 
-    print("""
-    ------------------------------------
-    enter - enter another list
-    0 - quit: 
-    ------------------------------------
-    """)
+    total = 0
 
-    prompt = input("Prompt: ")
+    total = calculate(total)
+    print(LINE_UP, end=LINE_CLEAR)
+    print("")
+    print(f"    this week i spent £{format(round(total, 2), '.2f')}")
 
-    if prompt == "":
-        total = 0
+    print("\n    Press enter to start again")
+    print("    Or '0' to quit...")
+    choice = input()
 
-        total = calculate(total)
-        print(LINE_UP, end=LINE_CLEAR)
-        print("")
-        print(f"    this week i spent £{format(round(total, 2), '.2f')}")
-
-    elif prompt == "0":
-        print("\nGoodbye!")
+    if choice == '0':
+        print("Goodbye!")
         exit(0)
 
-    else:
-        print("Please enter a valid option")
+    print("------------------------------------\n\n")
