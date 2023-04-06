@@ -28,7 +28,7 @@ def calculate(total):
                 continue
 
         print("")
-        total += round(num, 2)
+        total += num
 
 
 print("")
