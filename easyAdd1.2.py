@@ -33,7 +33,7 @@ def calculate(total):
 
 print("")
 print("\n------------------------------------\n")
-print(" Welcome to easyAdd1.2")
+print(" I'm a funny welcome screen")
 print(" Enter a list of numbers to add together")
 print(" Or simply paste a list of numbers!")
 print("\n------------------------------------\n")
